@@ -1,6 +1,6 @@
 // swiper js (testimonial section)
 const swiper = new Swiper('.swiper', {
-    scrollbar : {
+    scrollbar: {
         el: '.swiper-scrollbar',
         draggable: true,
     },
@@ -30,8 +30,8 @@ closeBtn.addEventListener('click', () => {
 
 const navItems = menu.querySelectorAll('li');
 
-const changeActiveItem = ()=> {
-    navItems.forEach(item =>{
+const changeActiveItem = () => {
+    navItems.forEach(item => {
         const link = item.querySelector('a');
         link.classList.remove('active');
     })
@@ -40,7 +40,7 @@ const changeActiveItem = ()=> {
 // add active class to clicked nav item
 navItems.forEach(item => {
     const link = item.querySelector('a');
-    link.addEventListener('click', () =>{
+    link.addEventListener('click', () => {
         changeActiveItem();
         link.classList.add('active');
     })
@@ -51,14 +51,14 @@ navItems.forEach(item => {
 const readMoreBtn = document.querySelector('.read-more');
 const readMoreContent = document.querySelector('.read-more-content');
 
-readMoreBtn.addEventListener('click', () =>{
+readMoreBtn.addEventListener('click', () => {
     readMoreContent.classList.toggle('show-content');
 
-    if(readMoreContent.classList.contains('show-content')){
-        readMoreBtn.textContent= 'Show Less';
+    if (readMoreContent.classList.contains('show-content')) {
+        readMoreBtn.textContent = 'Show Less';
     } else {
-        readMoreBtn.textContent= 'Show More';
-        
+        readMoreBtn.textContent = 'Show More';
+
     }
 })
 
@@ -67,7 +67,12 @@ const skillItems = document.querySelectorAll('section.skills .skill');
 
 skillItems.forEach(skill => {
     skill.querySelector('.head').addEventListener('click', () => {
-        skill.querySelector('.items').classList.toggle('show-items')
+        skill.querySelector('.items').classList.toggle('show-items');
 
     })
-}) 
+})
+
+// add box shadow on scroll
+window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('show-box-shadow', window.scrollY > 100)
+});

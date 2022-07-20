@@ -3,10 +3,11 @@
     --color-light: #f4fafa;
     --color-dark: #525252;
     --color-black: #141415;
-    --color-primary: #f24e1e;
-    --color-primary-light: #hsl(14, 89%, 53%, 12%);
-    --color-success: #29f5a6;
-    --color-warning: #ffce31;
+    --color-primary: #c30052;
+    --color-primary-light: rgba(253, 76, 150, 5%);
+    /* --color-primary-light: #hsl(14, 89%, 53%, 12%); */
+    --color-success: #fc4c95;
+    --color-warning: #7d254a;
 
     --transition: all 300ms ease;
 
@@ -22,14 +23,25 @@
     text-decoration: none;
 }
 
-html {
-    font-size: 15px;
-    scroll-behavior: smooth;
+::-webkit-scrollbar{
+    width: 10px;
+    background: var(--color-primary-light);
 }
+
+::-webkit-scrollbar-thumb{
+    background: var(--color-primary);
+}
+
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+    background-image: url(/imagesbackground.png);
+}
+
 
 body {
     background: var(--color-white);
-    font-family: monospace;
+    font-family: url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,900&display=swap');
     color: var(--color-dark);
     max-width: 100vw;
 }
@@ -121,6 +133,11 @@ nav {
     border-bottom: 1px solid var(--color-light);
 }
 
+nav.show-box-shadow{
+    box-shadow: 0 00.6rem 1rem var(--color-primary-light);
+    border: none;
+}
+
 nav .container {
     display: flex;
     justify-content: space-between;
@@ -159,6 +176,10 @@ nav .container ul li a:hover {
 nav .container ul li a.active {
     background: var(--color-primary);
     color: var(--color-white);
+}
+
+nav .container img{
+    height: 4rem;
 }
 
 
@@ -683,10 +704,6 @@ footer .copyright {
     }
 
     /*********************nav bar *************************/
-    nav {
-        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
-    }
-
     nav h3 {
         margin-left: 1rem;
     }
