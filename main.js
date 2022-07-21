@@ -1,3 +1,13 @@
+// skills show-hide
+const skillItems = document.querySelectorAll('section.skills .skill');
+
+skillItems.forEach(skill => {
+    skill.querySelector('.head').addEventListener('click', () => {
+        skill.querySelector('.items').classList.toggle('show-items');
+
+    })
+})
+
 // swiper js (testimonial section)
 const swiper = new Swiper('.swiper', {
     scrollbar: {
@@ -8,7 +18,6 @@ const swiper = new Swiper('.swiper', {
 
 
 // menu sidebar
-
 const menuBtn = document.querySelector('#menu-btn');
 const closeBtn = document.querySelector('#close-btn');
 
@@ -47,7 +56,6 @@ navItems.forEach(item => {
 })
 
 // read more about link
-
 const readMoreBtn = document.querySelector('.read-more');
 const readMoreContent = document.querySelector('.read-more-content');
 
@@ -60,16 +68,6 @@ readMoreBtn.addEventListener('click', () => {
         readMoreBtn.textContent = 'Show More';
 
     }
-})
-
-// skills show-hide
-const skillItems = document.querySelectorAll('section.skills .skill');
-
-skillItems.forEach(skill => {
-    skill.querySelector('.head').addEventListener('click', () => {
-        skill.querySelector('.items').classList.toggle('show-items');
-
-    })
 })
 
 // add box shadow on scroll
